@@ -5,7 +5,7 @@ HOST_PORT := 1313
 CONTAINER_PORT := 1313
 
 # Default action
-.PHONY: build init run stop shell
+.PHONY: build run stop shell
 
 build:
 	docker build -t $(IMAGE_NAME) .

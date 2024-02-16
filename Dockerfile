@@ -1,9 +1,10 @@
 # Use an official Node runtime as a parent image
-FROM node:latest
+FROM ubuntu:latest
 
 # Install Hugo
-RUN apt-get update && apt-get install -y curl
-RUN curl -L https://github.com/gohugoio/hugo/releases/download/v0.101.0/hugo_0.101.0_Linux-64bit.deb -o hugo.deb
+RUN apt-get update && apt-get install -y curl && \
+    apt-get install -y npm 
+RUN curl -L https://github.com/gohugoio/hugo/releases/download/v0.122.0/hugo_extended_0.122.0_linux-amd64.deb -o hugo.deb
 RUN dpkg -i hugo.deb && rm hugo.deb
 
 # Set the working directory in the container

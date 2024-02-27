@@ -20,10 +20,10 @@
   
 </div>
 <div class="triangle">
-  <svg width="400" height="360" xmlns="http://www.w3.org/2000/svg">
+  <svg width="267" height="240" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <filter id="glow">
-        <feGaussianBlur stdDeviation="5" result="coloredBlur"></feGaussianBlur> <!-- Increased stdDeviation -->
+        <feGaussianBlur stdDeviation="3.33" result="coloredBlur"></feGaussianBlur>
         <feMerge>
           <feMergeNode in="coloredBlur"></feMergeNode>
           <feMergeNode in="SourceGraphic"></feMergeNode>
@@ -31,11 +31,12 @@
       </filter>
     </defs>
   
-    <polygon points="200,20 80,340 320,340" stroke="limegreen" stroke-width="4" fill="none" filter="url(#glow)">
+    <polygon points="133.33,13.33 53.33,226.67 213.33,226.67" stroke="limegreen" stroke-width="2.67" fill="none" filter="url(#glow)">
       <animate attributeName="stroke-dasharray" from="10,10" to="30,10" dur="2s" repeatCount="indefinite"/>
       <animate attributeName="stroke-dashoffset" from="0" to="40" dur="2s" repeatCount="indefinite"/>
     </polygon>
   </svg>
+  
   
   
 </div>
@@ -46,4 +47,18 @@
 
 </main>
 <section class="claims"></section>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const circle = document.querySelector('.circle');
+    const triangle = document.querySelector('.triangle');
+
+    window.addEventListener('scroll', () => {
+        const currentScrollPosition = window.scrollY;
+
+        circle.style.marginTop = `${currentScrollPosition * 1.5}px`;
+        triangle.style.marginTop = `${currentScrollPosition * 2}px`;
+    });
+});
+  
+</script> 
 {{ end }}

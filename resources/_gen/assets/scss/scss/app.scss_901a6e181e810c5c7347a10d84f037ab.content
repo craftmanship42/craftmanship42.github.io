@@ -14485,7 +14485,11 @@ body {
   z-index: -2; }
 
 footer {
-  margin-top: 110px; }
+  margin-top: 110px;
+  border-top: solid #23262f !important; }
+
+footer li, footer a {
+  color: #adafb6 !important; }
 
 .circle {
   position: absolute;
@@ -14498,7 +14502,8 @@ footer {
   bottom: 15%; }
 
 .claim {
-  margin-top: 3em; }
+  margin-top: 3em;
+  color: white; }
 
 .sticky-top {
   background-color: black; }

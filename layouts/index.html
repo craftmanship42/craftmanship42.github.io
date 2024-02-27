@@ -1,59 +1,49 @@
 {{ define "main" }}
-<section class="section container-fluid mt-n3 pb-3">
-  <div class="row justify-content-center">
-    <div class="col-lg-12 text-center">
-      <h1>{{ .Title }}</h1>
-    </div>
-    <div class="col-lg-9 col-xl-8 text-center">
-      <p class="lead">{{ .Params.lead | safeHTML }}</p>
-      <a class="btn btn-primary btn-cta rounded-pill btn-lg my-3" href="" role="button">{{ i18n "get_started_jaja" }}</a>
-      {{ .Content }}
-    </div>
-  </div>
-</section>
-{{ end }}
+<main class="homepage">
+<div class="circle">
+  <svg width="250" height="250" xmlns="http://www.w3.org/2000/svg">
+    <!-- Definitions for reusable components like filters -->
+    <defs>
+      <!-- Filter definition for the glow effect -->
+      <filter id="glow">
+        <feGaussianBlur stdDeviation="4" result="coloredBlur"></feGaussianBlur>
+        <feMerge>
+          <feMergeNode in="coloredBlur"></feMergeNode>
+          <feMergeNode in="SourceGraphic"></feMergeNode>
+        </feMerge>
+      </filter>
+    </defs>
+  
+    <!-- Circle with a glow effect -->
+    <circle cx="110" cy="110" r="100" stroke="white" stroke-width="3" fill="black" filter="url(#glow)" />
+  </svg>
+  
+</div>
+<div class="triangle">
+  <svg width="400" height="360" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="glow">
+        <feGaussianBlur stdDeviation="5" result="coloredBlur"></feGaussianBlur> <!-- Increased stdDeviation -->
+        <feMerge>
+          <feMergeNode in="coloredBlur"></feMergeNode>
+          <feMergeNode in="SourceGraphic"></feMergeNode>
+        </feMerge>
+      </filter>
+    </defs>
+  
+    <polygon points="200,20 80,340 320,340" stroke="limegreen" stroke-width="4" fill="none" filter="url(#glow)">
+      <animate attributeName="stroke-dasharray" from="10,10" to="30,10" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-dashoffset" from="0" to="40" dur="2s" repeatCount="indefinite"/>
+    </polygon>
+  </svg>
+  
+  
+</div>
+<div class="claim">
+  <h1>Neo Craftmanship</h1>
+  <h2>Manifesto. Handmade with love and passion.</h2>
+</div>
 
-{{ define "sidebar-prefooter" }}
-  {{ if site.Params.doks.backgroundDots -}}
-  <div class="d-flex justify-content-start">
-    <div class="bg-dots"></div>
-  </div>
-  {{ end -}}
-  {{ if eq $.Site.Language.LanguageName "English" }}
-  <section class="section section-md section-features">
-    <div class="container">
-      <div class="row justify-content-center text-center">
-        <div class="col-lg-5">
-          <h2 class="h4">Update content</h2>
-          <p>Edit <code>content/_index.md</code> to see this page change.</p>
-        </div>
-        <div class="col-lg-5">
-          <h2 class="h4">Add new content</h2>
-          <p>Add Markdown files to <code>content</code> to create new pages.</p>
-        </div>
-        <div class="col-lg-5">
-          <h2 class="h4">Configure your site</h2>
-          <p>Edit your config in <code>config/_default/hyas/doks.toml</code>.</p>
-        </div>
-        <div class="col-lg-5">
-          <h2 class="h4">Read the docs</h2>
-          <p>Learn more in the <a href="https://getdoks.org/">Docs</a>.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  {{ end }}
-{{ end }}
-
-{{ define "sidebar-footer" }}
-{{ if site.Params.doks.sectionFooter -}}
-<section class="section section-md container-fluid bg-light">
-  <div class="row justify-content-center text-center">
-    <div class="col-lg-7">
-      <h2 class="mt-2">Start building with Doks today</h2>
-      <a class="btn btn-primary rounded-pill px-4 my-2" href="/docs/{{ if site.Params.doks.docsVersioning }}{{ site.Params.doks.docsVersion }}/{{ end }}prologue/introduction/" role="button">{{ i18n "get-started" }}</a>
-    </div>
-  </div>
-</section>
-{{ end -}}
+</main>
+<section class="claims"></section>
 {{ end }}

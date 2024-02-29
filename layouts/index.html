@@ -1,5 +1,12 @@
 {{ define "main" }}
 <main class="homepage">
+  <div class="claim">
+    <h1>Neo Craftmanship</h1>
+    <h2>Manifesto. Handmade with love and passion.</h2>
+  </div>
+<div id="perspective">
+  <div id="container"></div>
+</div>
 <div class="circle">
   <svg width="250" height="250" xmlns="http://www.w3.org/2000/svg">
     <!-- Definitions for reusable components like filters -->
@@ -15,10 +22,11 @@
     </defs>
   
     <!-- Circle with a glow effect -->
-    <circle cx="110" cy="110" r="100" stroke="white" stroke-width="3" fill="black" filter="url(#glow)" />
+    <circle cx="125" cy="125" r="100" stroke="yellow" stroke-width="7" fill="none" filter="url(#glow)" />
   </svg>
   
 </div>
+<!--
 <div class="triangle">
   <svg width="267" height="240" xmlns="http://www.w3.org/2000/svg">
     <defs>
@@ -36,29 +44,55 @@
       <animate attributeName="stroke-dashoffset" from="0" to="40" dur="2s" repeatCount="indefinite"/>
     </polygon>
   </svg>
-  
-  
-  
 </div>
-<div class="claim">
-  <h1>Neo Craftmanship</h1>
-  <h2>Manifesto. Handmade with love and passion.</h2>
-</div>
+-->
+
+
 
 </main>
 <section class="claims"></section>
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const circle = document.querySelector('.circle');
-    const triangle = document.querySelector('.triangle');
-
-    window.addEventListener('scroll', () => {
-        const currentScrollPosition = window.scrollY;
-
-        circle.style.marginTop = `${currentScrollPosition * 1.5}px`;
-        triangle.style.marginTop = `${currentScrollPosition * 2}px`;
-    });
+container.animate({
+  transform: [
+    'rotateX(70deg) rotateZ(0deg)',
+    'rotateX(70deg) rotateZ(360deg)',
+  ],
+}, {
+  duration: 20000,
+  iterations: Infinity,
 });
-  
+
+var sideCount = 20;
+var adjustment = (sideCount % 2) * 0.5;
+var min = -sideCount / 2 + adjustment;
+var max = sideCount / 2 + adjustment;
+
+for (var y = min; y < max; y++) {
+  for (var x = min; x < max; x++) {
+    var box = createBox();
+    box.animate({
+      transform: [
+        'translateZ(0px)',
+        'translateZ(40px)',
+      ],
+      opacity: [1, 0],
+    }, {
+      delay: (x*x + y*y) * 20,
+      duration: 2000,
+      iterations: Infinity,
+      direction: 'alternate',
+      easing: 'ease-in',
+    });
+  }
+}
+
+function createBox() {
+  var box = document.createElement('div');
+  box.className = 'box';
+  box.style.width = (100 / sideCount) + '%';
+  box.style.height = (100 / sideCount) + '%';
+  container.appendChild(box);
+  return box;
+}
 </script> 
 {{ end }}

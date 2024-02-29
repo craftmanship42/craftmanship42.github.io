@@ -223,6 +223,7 @@
     "ids": [
       "TableOfContents",
       "buttonColorMode",
+      "container",
       "doks-docs-nav",
       "further-reading",
       "glow",
@@ -230,6 +231,7 @@
       "offcanvasNavMainLabel",
       "offcanvasNavSection",
       "offcanvasNavSectionLabel",
+      "perspective",
       "query",
       "search-form",
       "searchModal",

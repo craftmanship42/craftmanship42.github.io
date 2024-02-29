@@ -1,5 +1,9 @@
 {{ define "main" }}
 <main class="homepage">
+  <div class="claim">
+    <h1>Neo Craftmanship</h1>
+    <h2>Manifesto. Handmade with love and passion.</h2>
+  </div>
 <div id="perspective">
   <div id="container"></div>
 </div>
@@ -18,7 +22,7 @@
     </defs>
   
     <!-- Circle with a glow effect -->
-    <circle cx="110" cy="110" r="100" stroke="white" stroke-width="3" fill="black" filter="url(#glow)" />
+    <circle cx="125" cy="125" r="100" stroke="yellow" stroke-width="7" fill="black" filter="url(#glow)" />
   </svg>
   
 </div>
@@ -40,32 +44,14 @@
       <animate attributeName="stroke-dashoffset" from="0" to="40" dur="2s" repeatCount="indefinite"/>
     </polygon>
   </svg>
-  
-  
-  
 </div>
 -->
 
-<div class="claim">
-  <h1>Neo Craftmanship</h1>
-  <h2>Manifesto. Handmade with love and passion.</h2>
-</div>
+
 
 </main>
 <section class="claims"></section>
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const circle = document.querySelector('.circle');
-    const triangle = document.querySelector('.triangle');
-
-    window.addEventListener('scroll', () => {
-        const currentScrollPosition = window.scrollY;
-
-        circle.style.marginTop = `${currentScrollPosition * 1.5}px`;
-        triangle.style.marginTop = `${currentScrollPosition * 2}px`;
-    });
-});
-
 container.animate({
   transform: [
     'rotateX(70deg) rotateZ(0deg)',

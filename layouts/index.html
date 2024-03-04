@@ -57,17 +57,9 @@
   <div id="stripe-bottom"class="stripe"></div>
 </section>
 <script>
-container.animate({
-  transform: [
-    'rotateX(70deg) rotateZ(0deg)',
-    'rotateX(70deg) rotateZ(360deg)',
-  ],
-}, {
-  duration: 20000,
-  iterations: Infinity,
-});
 
-var sideCount = 2;
+
+var sideCount = 20;
 var adjustment = (sideCount % 2) * 0.5;
 var min = -sideCount / 2 + adjustment;
 var max = sideCount / 2 + adjustment;
@@ -80,10 +72,10 @@ for (var y = min; y < max; y++) {
         'translateZ(0px)',
         'translateZ(40px)',
       ],
-      opacity: [1, 0],
+      opacity: [0, 1],
     }, {
       delay: (x*x + y*y) * 20,
-      duration: 2000,
+      duration: 900,
       iterations: Infinity,
       direction: 'alternate',
       easing: 'ease-in',

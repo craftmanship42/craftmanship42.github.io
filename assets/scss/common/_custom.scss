@@ -44,7 +44,7 @@ footer li, footer a {
 }
 
 .claim h1 {
-    color: green
+    color: #456955;
 }
 
 .sticky-top {
@@ -58,16 +58,46 @@ footer li, footer a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
+}
   
-  #container {
+#container {
     width: 50vmin;
     height: 50vmin;
     line-height: 0;
     transform-style: preserve-3d;
-  }
+ }
   
-  .box {
+.box {
     display: inline-block;
     background: white;
-  }
+}
+.claims {
+    position: relative;
+    background: whitesmoke;
+    min-height: 100vh;
+    padding: 5%;
+
+    h1 {
+        color: black;
+        z-index: 1;
+        position: relative;
+    }
+}
+.stripe {
+    position: absolute;
+    transform: skewY(-7deg);
+    background: whitesmoke;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#stripe-upper {
+    transform: skewY(-10deg);
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 13%, rgba(69,105,85,1) 92%);
+}
+
+#stripe-bottom {
+    transform: skewY(10deg);
+}

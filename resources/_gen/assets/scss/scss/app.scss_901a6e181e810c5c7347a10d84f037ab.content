@@ -14497,7 +14497,7 @@ footer li, footer a {
   margin-top: 3em; }
 
 .claim h1, .claim .h1 {
-  color: green; }
+  color: #456955; }
 
 .sticky-top {
   background-color: black; }
@@ -14520,5 +14520,31 @@ footer li, footer a {
 .box {
   display: inline-block;
   background: white; }
+
+.claims {
+  position: relative;
+  background: whitesmoke;
+  min-height: 100vh;
+  padding: 5%; }
+  .claims h1, .claims .h1 {
+    color: black;
+    z-index: 1;
+    position: relative; }
+
+.stripe {
+  position: absolute;
+  transform: skewY(-7deg);
+  background: whitesmoke;
+  top: 0;
+  width: 100%;
+  height: 100%; }
+
+#stripe-upper {
+  transform: skewY(-10deg);
+  background: white;
+  background: radial-gradient(circle, white 0%, white 13%, #456955 92%); }
+
+#stripe-bottom {
+  transform: skewY(10deg); }
 
 /*# sourceMappingURL=main.css.map */

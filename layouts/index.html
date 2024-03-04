@@ -50,7 +50,12 @@
 
 
 </main>
-<section class="claims"></section>
+<section class="claims">
+  <div class="stripe"></div>
+  <h1>Analyzing your energy consumption</h1>
+  <div id="stripe-upper"class="stripe"></div>
+  <div id="stripe-bottom"class="stripe"></div>
+</section>
 <script>
 container.animate({
   transform: [
@@ -62,7 +67,7 @@ container.animate({
   iterations: Infinity,
 });
 
-var sideCount = 20;
+var sideCount = 2;
 var adjustment = (sideCount % 2) * 0.5;
 var min = -sideCount / 2 + adjustment;
 var max = sideCount / 2 + adjustment;

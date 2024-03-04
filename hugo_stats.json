@@ -2,7 +2,6 @@
   "htmlElements": {
     "tags": [
       "a",
-      "animate",
       "article",
       "aside",
       "body",
@@ -37,7 +36,6 @@
       "noscript",
       "p",
       "path",
-      "polygon",
       "script",
       "section",
       "small",
@@ -204,6 +202,7 @@
       "status",
       "sticky-top",
       "stretched-link",
+      "stripe",
       "submitted",
       "tags",
       "taxonomy",
@@ -217,7 +216,6 @@
       "title",
       "title-submitted",
       "toc-mobile",
-      "triangle",
       "visually-hidden"
     ],
     "ids": [
@@ -242,6 +240,8 @@
       "section-45389ee90014e0938cb09409b9a8794d",
       "section-63d5049791d9d79d86e9a108b0a999ca",
       "socialMenu",
+      "stripe-bottom",
+      "stripe-upper",
       "toc"
     ]
   }

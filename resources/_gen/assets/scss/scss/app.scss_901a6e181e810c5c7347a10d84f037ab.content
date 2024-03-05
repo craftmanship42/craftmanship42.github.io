@@ -14503,13 +14503,36 @@ footer li, footer a {
   background-color: black; }
 
 #perspective {
+  /* Existing styles */
   height: 50vmin;
-  perspective: 60vmin;
+  perspective: 10vmin;
   position: absolute;
   z-index: 2;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+  clip-path: circle(50% at 50% 50%);
+  /* Add a glowing effect using box-shadow. Adjust the color and spread as needed */
+  box-shadow: 0 0 15px 5px rgba(255, 255, 0, 0.5);
+  /* Yellow glow */ }
+
+#perspective::before {
+  content: '';
+  position: absolute;
+  top: -2%;
+  /* Adjust these values to control the size of the border */
+  left: -2%;
+  right: -2%;
+  bottom: -2%;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  /* Adjust border color and opacity as needed */
+  border-radius: 50%;
+  z-index: -1;
+  /* Optional: Add another layer of glow */
+  box-shadow: 0 0 20px 10px rgba(255, 255, 0, 0.5);
+  /* Outer yellow glow */
+  clip-path: circle(51% at 50% 50%);
+  /* Ensure this matches the parent's clip-path but slightly larger to create a border effect */ }
 
 #container {
   width: 50vmin;
@@ -14519,7 +14542,8 @@ footer li, footer a {
 
 .box {
   display: inline-block;
-  background: #45695591; }
+  background: #45695591;
+  border-radius: 50%; }
 
 .claims {
   position: relative;

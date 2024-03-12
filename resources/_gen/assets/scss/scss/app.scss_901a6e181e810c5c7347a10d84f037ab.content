@@ -14467,9 +14467,10 @@ body {
   background-color: black;
   position: relative;
   margin-bottom: 10em;
-  max-width: 1400px;
   margin: 0 auto;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center; }
 
 footer {
   margin-top: 110px;
@@ -14497,42 +14498,13 @@ footer li, footer a {
   margin-top: 3em; }
 
 .claim h1, .claim .h1 {
-  color: #456955; }
+  color: #ffc696; }
+
+.claim h2, .claim .h2 {
+  color: #d49366; }
 
 .sticky-top {
   background-color: black; }
-
-#perspective {
-  /* Existing styles */
-  height: 50vmin;
-  perspective: 10vmin;
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  clip-path: circle(50% at 50% 50%);
-  /* Add a glowing effect using box-shadow. Adjust the color and spread as needed */
-  box-shadow: 0 0 15px 5px rgba(255, 255, 0, 0.5);
-  /* Yellow glow */ }
-
-#perspective::before {
-  content: '';
-  position: absolute;
-  top: -2%;
-  /* Adjust these values to control the size of the border */
-  left: -2%;
-  right: -2%;
-  bottom: -2%;
-  border: 2px solid rgba(255, 255, 255, 0.75);
-  /* Adjust border color and opacity as needed */
-  border-radius: 50%;
-  z-index: -1;
-  /* Optional: Add another layer of glow */
-  box-shadow: 0 0 20px 10px rgba(255, 255, 0, 0.5);
-  /* Outer yellow glow */
-  clip-path: circle(51% at 50% 50%);
-  /* Ensure this matches the parent's clip-path but slightly larger to create a border effect */ }
 
 #container {
   width: 50vmin;
@@ -14570,5 +14542,10 @@ footer li, footer a {
 
 #stripe-bottom {
   transform: skewY(10deg); }
+
+#wave-container canvas {
+  position: absolute;
+  top: 0;
+  left: 0; }
 
 /*# sourceMappingURL=main.css.map */

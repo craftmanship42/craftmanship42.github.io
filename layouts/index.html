@@ -1,34 +1,11 @@
 {{ define "main" }}
 <main class="homepage">
   <div class="claim">
-    <h1>Neo Craftmanship</h1>
-    <h2>Manifesto. Handmade with love and passion.</h2>
+    <h1>Innovate and Elevate your software</h1>
+    <h2>Tailored E-commerce, AI, and Performance Solutions</h2>
   </div>
-<div id="perspective">
-  <div id="container"></div>
-</div>
-<!--
-<div class="triangle">
-  <svg width="267" height="240" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <filter id="glow">
-        <feGaussianBlur stdDeviation="3.33" result="coloredBlur"></feGaussianBlur>
-        <feMerge>
-          <feMergeNode in="coloredBlur"></feMergeNode>
-          <feMergeNode in="SourceGraphic"></feMergeNode>
-        </feMerge>
-      </filter>
-    </defs>
-  
-    <polygon points="133.33,13.33 53.33,226.67 213.33,226.67" stroke="limegreen" stroke-width="2.67" fill="none" filter="url(#glow)">
-      <animate attributeName="stroke-dasharray" from="10,10" to="30,10" dur="2s" repeatCount="indefinite"/>
-      <animate attributeName="stroke-dashoffset" from="0" to="40" dur="2s" repeatCount="indefinite"/>
-    </polygon>
-  </svg>
-</div>
--->
 
-
+  <div id="wave-container"></div> 
 
 </main>
 <section class="claims">
@@ -39,38 +16,79 @@
 </section>
 <script>
 
+document.addEventListener('DOMContentLoaded', function() {
+// Simplex noise setup
+const noise = new SimplexNoise();
+const container = document.getElementById('wave-container');
+const body = document.getElementsByName('body');
+const canvas = document.createElement('canvas');
+const ctx = canvas.getContext('2d');
+let w = window.innerWidth;
+let h = 300;
+let nt = 0;
+let animationId;
 
-var sideCount = 20;
-var adjustment = (sideCount % 2) * 0.5;
-var min = -sideCount / 2 + adjustment;
-var max = sideCount / 2 + adjustment;
+// Default configuration
+const config = {
+  colors: [
+    "#456955",
+    "#8ecae6",
+    "#264653",
+    "#2a9d8f",
+    "#264653",
+  ],
+waveWidth: 50,
+backgroundFill: "black",
+blur: 10,
+speed: "fast",
+waveOpacity: 0.5
+};
 
-for (var y = min; y < max; y++) {
-  for (var x = min; x < max; x++) {
-    var box = createBox();
-    box.animate({
-      transform: [
-        'translateZ(0px)',
-        'translateZ(40px)',
-      ],
-      opacity: [0, 1],
-    }, {
-      delay: (x*x + y*y) * 20,
-      duration: 2000,
-      iterations: Infinity,
-      direction: 'alternate',
-      easing: 'ease-in',
-    });
-  }
+// Adjust canvas size
+canvas.width = w;
+canvas.height = h;
+canvas.style.filter = `blur(${config.blur}px)`;
+container.appendChild(canvas);
+
+window.onresize = function() {
+w = canvas.width = window.innerWidth;
+h = canvas.height = window.innerHeight;
+};
+
+function getSpeed() {
+return config.speed === "slow" ? 0.001 : 0.002;
 }
 
-function createBox() {
-  var box = document.createElement('div');
-  box.className = 'box';
-  box.style.width = (100 / sideCount) + '%';
-  box.style.height = (100 / sideCount) + '%';
-  container.appendChild(box);
-  return box;
+function drawWave(n) {
+nt += getSpeed();
+for (let i = 0; i < n; i++) {
+   ctx.beginPath();
+   ctx.lineWidth = config.waveWidth;
+   ctx.strokeStyle = config.colors[i % config.colors.length];
+   for (let x = 0; x < w; x += 5) {
+       let y = noise.noise3D(x / 800, 0.3 * i, nt) * 100;
+       ctx.lineTo(x, y + h * 0.5);
+   }
+   ctx.stroke();
+   ctx.closePath();
 }
+}
+
+function render() {
+ctx.fillStyle = config.backgroundFill;
+ctx.globalAlpha = config.waveOpacity;
+ctx.fillRect(0, 0, w, h);
+drawWave(5);
+animationId = requestAnimationFrame(render);
+}
+
+render();
+
+// Cleanup on unload
+window.addEventListener('unload', function() {
+cancelAnimationFrame(animationId);
+});
+});
+
 </script> 
 {{ end }}

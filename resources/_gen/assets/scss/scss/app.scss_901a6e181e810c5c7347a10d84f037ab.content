@@ -14507,6 +14507,7 @@ footer li, footer a {
   position: relative; }
 
 .claim h1, .claim .h1 {
+  font-size: 48px;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
 
 .sticky-top {

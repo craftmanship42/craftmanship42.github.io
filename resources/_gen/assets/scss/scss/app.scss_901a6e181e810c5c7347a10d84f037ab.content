@@ -14457,20 +14457,20 @@ body {
   background-color: {{ site.Params.doks.backGround }};
 }
 */
-body {
+html, body {
   background: black !important;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  font-family: "Ubuntu", sans-serif; }
 
 .homepage {
   padding: 2em;
-  min-height: 100vh;
   background-color: black;
   position: relative;
   margin-bottom: 10em;
   margin: 0 auto;
-  overflow-x: hidden;
   display: flex;
-  justify-content: center; }
+  flex-direction: column;
+  min-height: 100vh; }
 
 footer {
   margin-top: 110px;
@@ -14495,7 +14495,8 @@ footer li, footer a {
 
 .claim {
   z-index: 1;
-  margin-top: 3em; }
+  margin-top: 3em;
+  position: relative; }
 
 .claim h1, .claim .h1 {
   color: #ffc696; }
@@ -14546,6 +14547,17 @@ footer li, footer a {
 #wave-container canvas {
   position: absolute;
   top: 0;
-  left: 0; }
+  left: 0;
+  z-index: 0; }
+
+.button-container {
+  text-align: center;
+  margin-top: 49px; }
+  .button-container button {
+    background: transparent;
+    border-color: #2a9d8f;
+    width: 100%;
+    position: relative;
+    z-index: 3; }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,11 +1,19 @@
 {{ define "main" }}
 <main class="homepage">
-  <div class="claim">
-    <h1>Innovate and Elevate your software</h1>
-    <h2>Tailored E-commerce, AI, and Performance Solutions</h2>
+  <div>
+    <div class="claim">
+      <h1>Innovate and Elevate your software</h1>
+      <h2>Tailored E-commerce, AI, and Performance Solutions</h2>
+    </div>
+  
+    <div id="wave-container"></div>
   </div>
-
-  <div id="wave-container"></div> 
+  <div class="button-container">
+    <button >
+        GET IN TOUCH
+    </button>    
+  </div>
+   
 
 </main>
 <section class="claims">
@@ -84,10 +92,7 @@ animationId = requestAnimationFrame(render);
 
 render();
 
-// Cleanup on unload
-window.addEventListener('unload', function() {
-cancelAnimationFrame(animationId);
-});
+
 });
 
 </script> 

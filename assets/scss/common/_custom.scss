@@ -3,6 +3,14 @@ html, body {
     overflow-x: hidden;
     font-family: "Ubuntu", sans-serif;
 }
+
+header {
+    background-color: black !important;
+    a, button {
+        color: white !important;
+    }
+}
+
 .homepage {
     padding: 2em;
     background-color: black;
@@ -12,6 +20,10 @@ html, body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+.homepage > div {
+    min-height: 65vh;
 }
 
 footer {
@@ -46,12 +58,9 @@ footer li, footer a {
 }
 
 .claim h1 {
-    color: #ffc696;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-.claim h2 {
-    color: #d49366
-}
 
 .sticky-top {
    background-color: black;
@@ -109,14 +118,18 @@ footer li, footer a {
 
 .button-container {
     text-align: center;
-    margin-top: 49px;
 
     button {
-        background: transparent;
-        border-color: #2a9d8f;
+        background: #138b4d;
+        border-color: #2a9d8f00;
         width: 100%;
         position: relative;
         z-index: 3;
+        line-height: 80px;
+        border-radius: 44px;
+        font-weight: bold;
+        font-size: 28px;
+        color: black;
     }
 }
 

@@ -72,10 +72,6 @@ canvas.height = h;
 canvas.style.filter = `blur(${config.blur}px)`;
 container.appendChild(canvas);
 
-window.onresize = function() {
-w = canvas.width = window.innerWidth;
-h = canvas.height = window.innerHeight;
-};
 
 function getSpeed() {
 return config.speed === "slow" ? 0.001 : 0.002;

@@ -14586,4 +14586,16 @@ footer li, footer a {
   color: transparent;
   background-clip: text; }
 
+.claims-content {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap; }
+
+.expertise-item {
+  display: flex;
+  width: 50%;
+  color: black;
+  align-items: center; }
+
 /*# sourceMappingURL=main.css.map */

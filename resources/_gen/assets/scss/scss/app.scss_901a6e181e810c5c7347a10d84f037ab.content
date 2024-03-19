@@ -14477,8 +14477,8 @@ header {
   flex-direction: column;
   min-height: 100vh; }
 
-.homepage > div {
-  min-height: 65vh; }
+.homepage p {
+  font-size: x-large; }
 
 footer {
   margin-top: 110px;
@@ -14559,8 +14559,8 @@ footer li, footer a {
 .button-container {
   text-align: center; }
   .button-container button {
-    background: #138b4d;
-    border-color: #2a9d8f00;
+    background: black;
+    border-color: #2a9d8f;
     width: 100%;
     position: relative;
     z-index: 3;
@@ -14568,6 +14568,22 @@ footer li, footer a {
     border-radius: 44px;
     font-weight: bold;
     font-size: 28px;
-    color: black; }
+    color: white; }
+
+.space-bottom {
+  margin-bottom: 4em; }
+
+.no-space-bottom {
+  margin-bottom: 0; }
+
+.gradient-text-first {
+  background-image: radial-gradient(27.27% 206.64% at 21.29% 107.81%, #ffffff 0%, #54ffa4 35.44%, #ffffff 100%);
+  color: transparent;
+  background-clip: text; }
+
+.gradient-text-second {
+  background-image: radial-gradient(27.27% 206.64% at 60.29% 107.81%, #ffffff 0%, #54ffa4 35.44%, #ffffff 100%);
+  color: transparent;
+  background-clip: text; }
 
 /*# sourceMappingURL=main.css.map */

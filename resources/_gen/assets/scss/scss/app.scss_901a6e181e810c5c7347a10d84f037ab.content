@@ -14528,7 +14528,8 @@ footer li, footer a {
   position: relative;
   background: whitesmoke;
   min-height: 100vh;
-  padding: 5%; }
+  padding: 5%;
+  background-color: #54ffa4; }
   .claims h1, .claims .h1 {
     color: black;
     z-index: 1;
@@ -14545,7 +14546,7 @@ footer li, footer a {
 #stripe-upper {
   transform: skewY(-10deg);
   background: white;
-  background: radial-gradient(circle, white 0%, white 13%, #456955 92%); }
+  background-image: radial-gradient(27.27% 207.64% at 63.29% 87.81%, #0098dc 0%, #54ffa4 36.44%, #6960f491 100%); }
 
 #stripe-bottom {
   transform: skewY(10deg); }

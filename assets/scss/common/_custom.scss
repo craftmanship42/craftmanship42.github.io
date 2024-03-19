@@ -85,6 +85,8 @@ footer li, footer a {
     min-height: 100vh;
     padding: 5%;
 
+    background-color: #54ffa4;
+
     h1 {
         color: black;
         z-index: 1;
@@ -103,7 +105,7 @@ footer li, footer a {
 #stripe-upper {
     transform: skewY(-10deg);
     background: rgb(255,255,255);
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 13%, rgba(69,105,85,1) 92%);
+    background-image: radial-gradient(27.27% 207.64% at 63.29% 87.81%, #0098dc 0%, #54ffa4 36.44%, #6960f491 100%);
 }
 
 #stripe-bottom {

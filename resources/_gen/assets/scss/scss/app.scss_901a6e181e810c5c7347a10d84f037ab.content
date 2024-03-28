@@ -14475,7 +14475,8 @@ header {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; }
+  min-height: 100vh;
+  margin-bottom: 5%; }
 
 .homepage p {
   font-size: x-large; }
@@ -14527,7 +14528,6 @@ footer li, footer a {
 .claims {
   position: relative;
   background: whitesmoke;
-  min-height: 100vh;
   padding: 5%;
   background-color: #54ffa4; }
   .claims h1, .claims .h1 {
@@ -14546,7 +14546,7 @@ footer li, footer a {
 #stripe-upper {
   transform: skewY(-10deg);
   background: white;
-  background-image: radial-gradient(27.27% 207.64% at 63.29% 87.81%, #0098dc 0%, #54ffa4 36.44%, #6960f491 100%); }
+  background-image: radial-gradient(27.27% 207.64% at 63.29% 87.81%, #0098dc 0%, #54ffa4 36.44%, whitesmoke 100%); }
 
 #stripe-bottom {
   transform: skewY(10deg); }
@@ -14587,6 +14587,20 @@ footer li, footer a {
   color: transparent;
   background-clip: text; }
 
+.claims-title {
+  font-size: x-large;
+  color: black;
+  padding: 5%; }
+
+.claims-text {
+  font-size: x-large;
+  color: black;
+  padding: 5%; }
+
+.z1 {
+  z-index: 1;
+  position: relative; }
+
 .claims-content {
   z-index: 1;
   position: relative;
@@ -14598,5 +14612,108 @@ footer li, footer a {
   width: 50%;
   color: black;
   align-items: center; }
+
+.our-art {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.2)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+  background-color: black;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+.bg-effect-our-art {
+  position: absolute;
+  background-color: black;
+  -webkit-mask-image: radial-gradient(ellipse at center, transparent 20%, #000);
+  mask-image: radial-gradient(ellipse at center, transparent 20%, #000);
+  height: 100%;
+  inset: 0; }
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+
+.gradient-background {
+  position: relative;
+  padding: 20px;
+  border-radius: 22px;
+  max-width: 300px;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  /* Ensure the pseudo-element is contained */ }
+
+.gradient-background:before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  z-index: -1;
+  background: linear-gradient(60deg, #ff7e5f, #feb47b, #ff7e5f, #feb47b);
+  background-size: 200% 200%;
+  animation: moveGradient 4s linear infinite;
+  border-radius: 24px;
+  /* Slightly larger than the .gradient-background to create a border effect */ }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #000;
+  /* Set the background color of the card */
+  border-radius: 20px;
+  /* Ensure this matches the .gradient-background for consistency */
+  padding: 10px;
+  /* Adjust padding to manage space within the card */ }
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px; }
+
+.text-content {
+  margin-top: 20px; }
+
+.product-title, .product-description, .buy-now-btn, .price {
+  color: white;
+  /* Adjust text color for better visibility on dark background */ }
+
+.product-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0; }
+
+.product-description {
+  font-size: 14px;
+  margin-bottom: 20px; }
+
+.buy-now-btn {
+  background-color: #555;
+  /* Adjust button background color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold; }
+
+.price {
+  background-color: #777;
+  /* Adjust price tag background color */
+  padding: 3px 6px;
+  border-radius: 10px;
+  margin-left: 10px;
+  font-size: 12px; }
 
 /*# sourceMappingURL=main.css.map */

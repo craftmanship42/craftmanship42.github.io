@@ -14536,6 +14536,7 @@ footer li, footer a {
     position: relative; }
 
 .stripe {
+  z-index: 2;
   position: absolute;
   transform: skewY(-7deg);
   background: whitesmoke;
@@ -14601,8 +14602,16 @@ footer li, footer a {
   z-index: 1;
   position: relative; }
 
+.z2 {
+  z-index: 2;
+  position: relative; }
+
+.z3 {
+  z-index: 3;
+  position: relative; }
+
 .claims-content {
-  z-index: 1;
+  z-index: 3;
   position: relative;
   display: flex;
   flex-wrap: wrap; }

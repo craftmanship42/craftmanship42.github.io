@@ -254,6 +254,7 @@ footer li, footer a {
     background-color: #000; /* Set the background color of the card */
     border-radius: 20px; /* Ensure this matches the .gradient-background for consistency */
     padding: 10px; /* Adjust padding to manage space within the card */
+    margin-top: 20% !important; 
 }
 
 .product-image {
@@ -301,3 +302,8 @@ footer li, footer a {
     margin-left: 10px;
     font-size: 12px;
 }
+
+.card-image {
+    width: 100%;
+}
+

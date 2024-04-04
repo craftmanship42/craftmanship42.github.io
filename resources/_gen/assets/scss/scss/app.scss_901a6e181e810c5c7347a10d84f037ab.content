@@ -14681,7 +14681,8 @@ footer li, footer a {
   border-radius: 20px;
   /* Ensure this matches the .gradient-background for consistency */
   padding: 10px;
-  /* Adjust padding to manage space within the card */ }
+  /* Adjust padding to manage space within the card */
+  margin-top: 20% !important; }
 
 .product-image {
   max-width: 100%;
@@ -14724,5 +14725,8 @@ footer li, footer a {
   border-radius: 10px;
   margin-left: 10px;
   font-size: 12px; }
+
+.card-image {
+  width: 100%; }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,21 +1,21 @@
 <footer class="footer text-muted">
   <div class="container-{{ site.Params.doks.containerBreakpoint | default "lg" }}">
     <div class="row">
-      <div class="col-lg-8 text-center text-lg-start">
-        <ul class="list-inline">
-          {{ range .Site.Menus.footer -}}
-            <li class="list-inline-item">Manifesto</li>
-          {{- end }}
-        </ul>
+      <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
+        <p class="footer-heading">Craftmanship</p>
+        <p class="footer-copy mb-0">
+          AI agent engineering and fractional CTO services for product teams that need execution, not noise.
+        </p>
       </div>
-      <div class="col-lg-8 text-center text-lg-end">
-        <ul class="list-inline">
-          <li class="list-inline-item">About us</li>
-        </ul>
+
+      <div class="col-lg-6 text-center text-lg-end">
+        <div class="footer-links justify-content-center justify-content-lg-end">
+          {{ range .Site.Menus.footer -}}
+            <a href="{{ .URL | absURL }}">{{ .Name }}</a>
+          {{- end }}
+        </div>
+        <p class="footer-meta mt-3 mb-0">Built with the same engineering discipline we bring to client work.</p>
       </div>
     </div>
   </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js"></script>
-
 </footer>

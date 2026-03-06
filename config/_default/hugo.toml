@@ -1,4 +1,4 @@
-title = "Software Artesans"
+title = "Craftmanship"
 baseurl = "/"
 canonifyURLs = false
 disableAliases = true
@@ -17,7 +17,7 @@ defaultContentLanguage = "en"
 disableLanguages = ["de", "nl"]
 defaultContentLanguageInSubdir = true
 
-copyRight = "Copyright (c) 2020-2024 Hyas"
+copyRight = "Copyright (c) 2026 Craftmanship"
 
 [build.buildStats]
   enable = true
